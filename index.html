@@ -1,0 +1,99 @@
+<!-- WELCOME TO MY CODE! 
+  THANKS FOR BEING INTERESTED IN CHECKING OUT WHAT'S BEHIND THE BRICK AND MORTAR OF THIS STURDY HOUSE. 
+  THIS HOUSE AND IT'S NEIGHBOURING COMPONENTS WERE BUILT AS A CLASS PROJECT TO LEARN CSS ANIMATIONS, AS WELL AS THE FIRST TIME USING LESS. 
+  I USED LESS FOR THE ANIMATION CODE, AND KOALA TO COMPILE IT. I STILL HAD REGULAR CSS TO PROVIDE SHAPE AND COLORS TO THE PAGE.
+  IF YOU HAVE QUESTIONS, OR NEED A DEVELOPER TO BUILD SOMETHING GREAT, CONTACT ME!
+  ENJOY VISITING MY PORTFOLIO.
+  -PAUL-  
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a House - Interactive Animation</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+    <link href="css/compiled-style.css" type="text/css" rel="stylesheet"/>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Build<span>A</span>House</h1>
+      <h2>Visualizing a house is simple and fun</h2>
+    </header>
+    <main>
+      <h2 class="hidden">Stage for House Animation</h2>
+      <div id="stage">
+        <div id="house">
+        <div id="left">
+          <div class="roof">
+            <div class="r_top"></div>
+            <div class="r_edge"></div>
+          </div>
+          <div class="base">
+          </div>
+        </div>
+        <div id="center">
+          <div class="roof">
+            <div class="r_top"></div>
+            <div class="r_edge"></div>
+          </div>
+          <div class="base">
+            <div id="door">
+            </div>
+          </div>
+        </div>
+        <div id="right">
+          <div class="roof">
+            <div class="r_top"></div>
+            <div class="r_edge"></div>
+          </div>
+          <div class="base">
+          </div>
+        </div>
+      </div>
+      <div id="grass"></div>
+      </div>
+      <form name="build" id="build" method="get">
+        <h2>House Options</h2>
+        <button type="submit" id="btn_restart" form="build">Start Over</button>
+        <fieldset>
+          <legend>Stories</legend>
+          <p>How many floors would you like?</p>
+          <input type="radio" name="stories" value="One" id="rf_one" checked/>
+          <label for="rf_one">One</label>
+          <input type="radio" name="stories" value="Two" id="rf_two"/>
+          <label for="rf_two">Two</label>
+          <input type="radio" name="stories" value="Three" id="rf_three"/>
+          <label for="rf_three">Three</label>
+        </fieldset>
+        <fieldset>
+          <legend>Extensions</legend>
+          <p>What kind of extension would you like?</p>
+          <input type="radio" name="extension" value="None" id="re_none" checked/>
+          <label for="re_none">none</label>
+          <input type="radio" name="extension" value="Left" id="re_left"/>
+          <label for="re_left">left</label>
+          <input type="radio" name="extension" value="Right" id="re_right"/>
+          <label for="re_right">right</label>
+          <input type="radio" name="extension" value="Both" id="re_both"/>
+          <label for="re_both">both</label>
+        </fieldset>
+        <fieldset>
+          <legend>Windows</legend>
+          <p>Would you like windows?</p>
+          <input type="radio" name="windows" value="None" id="rw_none" checked/>
+          <label for="rw_none">None</label>
+          <input type="radio" name="windows" value="Some" id="rw_some"/>
+          <label for="rw_some">Some</label>
+          <input type="radio" name="windows" value="More" id="rw_more"/>
+          <label for="rw_more">Lots</label>
+        </fieldset>
+      </form>
+    </main>
+    <footer>
+      <h2 class="hidden">HTTP5104 Digital Design</h2>
+      <h3>&copy; Paul Ooi Design <span id="year">2017</span></h3>
+    </footer>
+  </body>
+</html>

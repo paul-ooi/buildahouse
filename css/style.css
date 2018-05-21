@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css?family=Londrina+Solid:300,400');
+/************************************************************************
+TABLE OF CONTENTS -- Paul Ooi Final Project HTTP5104
+*************************************************************************
+1)  GENERAL STYLING
+2) GENERAL STAGE AND MAIN ITEM STYLING
+3) FORM STYLING
+4) GENERAL STYLING OF HOUSE COMPONENTS
+5) MEDIA QUERIES
+
+************************************************************************/
+
+/*1)  GENERAL STYLING */
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  max-width: 1024px;
+  padding: 0;
+  margin: 0 auto;
+  font-family: 'Londrina Solid', Helvetica, Tahoma, Arial;
+  font-weight: 400;
+  background-color: rgb(96, 67, 156);
+}
+
+.hidden {
+  position: absolute;
+  left: -10000px;
+}
+
+header {
+  text-align: center;
+  color: rgb(240, 221, 180);
+}
+
+main {
+  margin: 0 auto;
+  display: flex;
+  align-content: center;
+}
+
+footer {
+  margin: 3rem auto;
+  font-weight: 300;
+  color: rgb(240, 221, 180);
+}
+
+h1 {
+  display: inline-block;
+  margin: 0.5em auto 0;
+  font-size: 3em;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+h1 span::before {
+  content: "-";
+}
+
+h1 span::after {
+  content: "-";
+}
+
+header h2 {
+  margin: 0 0 1em;
+  font-weight: 300;
+  font-size: 1.25em;
+}
+
+main h2 {
+  float: left;
+  color: rgb(240, 221, 180);
+  letter-spacing: 1px;
+}
+
+footer h2, h3 {
+  font-weight: 300;
+}
+
+/*2) GENERAL STAGE AND MAIN ITEM STYLING */
+
+#stage {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  justify-content: center;
+  margin: 0 3em 0 0;
+  width: 50%;
+  background: linear-gradient(0deg, rgb(53, 131, 195), rgb(159, 218, 251) 70% , rgb(159, 218, 251) );
+}
+
+#house {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#grass {
+  height: 40%;
+  width: 100%;
+  background: linear-gradient(0deg, rgb(99, 126, 68), rgb(190, 227, 66));
+}
+
+/*3) FORM STYLING */
+label, input {
+  text-transform: capitalize;
+  font-weight: 300;
+}
+
+label {
+  margin-right: 1em;
+  font-size: 1.1em;
+}
+
+button {
+  font-family: 'Londrina Solid', cursive;
+  position: relative;
+  font-size: 2em;
+  border-radius: 0.4em;
+  float: right;
+  padding: 0.15em 0.35em;
+  border: 5px solid rgb(243, 104, 227);
+  background-color:rgb(249, 192, 219);
+  margin-bottom: 1rem;
+}
+
+fieldset {
+  clear: both;
+  border: 0;
+  padding: 1.5em;
+  margin: 1.5em auto;
+  background-color: rgb(198, 146, 146);
+  box-shadow: 0.45em 0.55em 0.25em 0em rgb(29, 24, 39);
+  border-radius: 0.4em;
+}
+
+fieldset:first-of-type {
+  background-color: rgb(147, 187, 198);
+}
+
+fieldset:last-of-type {
+  background-color: rgb(150, 146, 198);
+}
+
+
+legend {
+  position: relative;
+  top: 1em;
+  font-weight: bold;
+  padding: 0;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+
+/*4) GENERAL STYLING OF HOUSE COMPONENTS */
+
+/* ROOF */
+.r_top {
+  height: 0;
+  border-top-width: 0;
+  border-bottom-width: 3em;
+  border-style: solid;
+}
+.r_edge {
+  height: 0.5em;
+  background-color: rgb(135, 101, 70);
+}
+
+/* BASE SECTION */
+.base {
+  background-color: rgb(149, 179, 186);
+  align-self: stretch;
+}
+
+
+/* CENTER COMPONENT */
+#center {
+  position:relative;
+  z-index: 10;
+  width: 10em;
+}
+#center .r_edge {
+  width: calc(100% + 2em);
+}
+#center .r_top {
+  width: calc(100% + 2em);
+  border-left-width: 2em;
+  border-left-color: transparent;
+  border-right-width: 2em;
+  border-right-color: transparent;
+  border-bottom-color: rgb(245, 153, 69);
+}
+#center div.r_top.left {
+  border-left-width: 1em;
+}
+#center div.r_top.right {
+  border-right-width: 1em;
+}
+#center .base {
+  height: 5em;
+  width: 100%;
+  box-shadow: inset 0 0.5em 0.5em 0 rgb(105, 126, 131);
+}
+#center div.base.two {
+  height: 7.5em;
+}
+#center div.base.three {
+  height: 12em;
+}
+
+
+
+
+/* RIGHT COMPONENT */
+#right {
+  position: relative;
+  left: -7em;
+}
+#right .r_edge {
+  width: calc(100% + 1em);
+}
+#right .r_top {
+  width: calc(100% + 1em);
+  border-left-width: 0;
+  border-left-color: rgb(245, 153, 69);
+  border-right-width: 3em;
+  border-right-color: transparent;
+  border-bottom-color: rgb(245, 153, 69);
+}
+#right .base {
+  height: 5em;
+  box-shadow: inset 0.5em 0.5em 1em rgb(105, 126, 131);
+}
+#right.show {
+  left:0;
+}
+#right div.base.two {
+  height: 7em;
+}
+
+
+
+/* LEFT COMPONENT */
+#left {
+  position: relative;
+  left: 7em;
+}
+#left .r_edge {
+  width: calc(100% + 1em);
+}
+#left .r_top {
+  width: calc(100% + 1em);
+  border-left-width: 3em;
+  border-left-color: transparent;
+  border-right-width: 0;
+  border-right-color: rgb(245, 153, 69);
+  border-bottom-color: rgb(245, 153, 69);
+}
+#left .base {
+  height: 5em;
+  box-shadow: inset -0.5em 0.5em 1em rgb(105, 126, 131);
+}
+#left.show {
+  left:0;
+}
+#left div.base.two {
+  height: 7em;
+}
+
+
+/* DOOR - MAIN CENTER*/
+#door {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 2em;
+  height: 3em;
+  background-color: rgb(126, 94, 39);
+  border-width: 2px 2px 0;
+  border-style: solid;
+  border-color: rgb(52, 42, 28);
+}
+
+
+/* WINDOW STYLING */
+.w_row {
+  width: 100%;
+  height: 2.5em;
+  margin: 0 0 1em;
+  padding: 0.5em 0.25em 0 0.25em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.window {
+  display: inline-block;
+  margin: 0 0.5em;
+  width: 2em;
+  height: 100%;
+  background-color: rgb(62, 83, 143);
+  padding: 4px 2px 0;
+}
+
+.pane {
+  background-color: rgb(131, 205, 228);
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  margin: 0 auto;
+  background: linear-gradient(-240deg, rgb(131, 205, 228), rgb(159, 218, 251) 60% , rgb(201, 233, 251) 75%, rgb(131, 205, 228) 90%, rgb(131, 205, 228));
+}
+
+#right .window, #left .window {
+  width: 1em;
+}
+
+
+/* 5) MEDIA QUERIES */
+@media all and (max-width:950px) {
+  #stage {
+    height: 20em;
+    width: 100%;
+    margin: 0 0 2em 0;
+  }
+  #grass {
+    height: 15%;
+  }
+  main {
+    flex-wrap: wrap;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  fieldset {
+    flex: 1 1 auto;
+    display: inline-block;
+    margin: 0 1em 1em;
+  }
+  form h2 {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  footer {
+    margin: 0;
+    text-align: center;
+  }
+  #btn_restart {
+    margin: 0.5em;
+    order: 3;
+  }
+}
+
+@media all and (max-width:540px) {
+  form {
+    justify-content: center;
+    align-content: flex-start;
+  }
+  footer {
+    text-align: center;
+  }
+  #btn_restart {
+    font-size: 1em;
+    height: 4em;
+    width: 4em;
+    order: unset;
+    flex: 0 1 auto;
+  }
+  form h2 {
+    flex: 0 1 auto;
+  }
+}
+
+@media all and (max-width:440px) {
+  main {
+    justify-content: center;
+  }
+  /* ADJUST SIZE OF HOUSE FOR SMALLER SCREENS */
+  #house {
+    -webkit-transform: scale(0.8,0.8);
+    -moz-transform: scale(0.8,0.8);
+    -ms-transform: scale(0.8,0.8);
+    -o-transform: scale(0.8,0.8);
+    transform: scale(0.8,0.8);
+    bottom: calc(100% - 21.6em);
+  }
+  h1 {
+    font-size: 2em;
+  }
+  header h2 {
+    font-size: 0.95em;
+  }
+  form {
+    justify-content: space-around;
+    align-items: center;
+  }
+  form h2 {
+    margin: 0 0 1em;
+  }
+  fieldset {
+    padding: 0.5em;
+  }
+  fieldset label {
+    margin: 0 3% 0 0;
+  }
+  fieldset input {
+    margin: 0;
+    display: inline-block;
+  }
+  form button {
+    margin: 1em 0;
+  }
+}
